@@ -37,11 +37,9 @@ module.exports.RegistrarPersona = (param) => new Promise((res, rej) => {
 		squery,
 		[param.id, param.nombres, param.apellidos, param.sexo],
 		function (err, rows, fields) {
-	    	if (err) {
-	    		console.log('error', err);
+	    	if (err) {	    		
 	        	connection.end();
-			} else {							
-				console.log('agregado');
+			} else {			
 				res({ result: "OK", persona: param});
 			}
 		}
